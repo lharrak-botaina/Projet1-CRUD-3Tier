@@ -12,10 +12,10 @@ class Promo{
     }
 
     public function getName(){
-        return $this->nom;
+        return $this->name;
     }
     public function setName($value){
-        $this->nom=$value;
+        $this->name=$value;
     }
 
 

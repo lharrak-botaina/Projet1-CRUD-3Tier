@@ -25,9 +25,9 @@ if(!empty($_POST)){
 
     <form action="" method="post" name="studentInfoForm" id="studentInfoForm" class="form-horizontal">
         <div class="form-group">
-            <label for="firstName" class="col-sm-2 control-label">Name</label>
+            <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-4">
-                <input type="text" value="" name="Name" id="" class="form-control" placeholder=" Name" />
+                <input type="text" value="" name="name" id="" class="form-control" placeholder=" Name" />
             </div>
         </div>
         

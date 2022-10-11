@@ -20,7 +20,7 @@ class PromoDA{
 
     function addPromo($promo){
         $name =$promo->getName();
-        $insertRow ="INSERT INTO promotion(name) VALUES($name)";
+        $insertRow ="INSERT INTO promotion(nom) VALUES('$name')";
         mysqli_query(getConnection(),$insertRow);
 
         
