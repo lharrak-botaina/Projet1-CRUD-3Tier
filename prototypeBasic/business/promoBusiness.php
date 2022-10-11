@@ -13,6 +13,10 @@ class PromoBLL{
         return $this->promoDA->addPromo($promo);
     }
 
+    public function GetAllPromos(){
+        return $this->promoDA->getAllPromos();
+    }
+
 }
 
 
