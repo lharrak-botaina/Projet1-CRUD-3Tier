@@ -1,23 +1,35 @@
 <?php
+    class Promo  {
 
-class Promo{
-    private $id;
-    private $name;
+        private $id;
+        private $Name;
+       
+       
 
-    public function getId(){
-        return $this->id;
+      
+
+        public function getId(){
+            return $this->id;
+        }
+        public function setId($value){
+            $this->id = $value;
+        }
+
+        public function getName(){
+            return $this->Name;
+        }
+
+        public function setName($value){
+            $this->Name = $value;
+        }
+
+       
+        
+        
+
+
+
+
+      
     }
-    public function setId($value){
-        $this->id=$value;
-    }
-
-    public function getName(){
-        return $this->name;
-    }
-    public function setName($value){
-        $this->name=$value;
-    }
-
-
-}
 ?>

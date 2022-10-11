@@ -1,36 +1,42 @@
 <?php
-include "business/promoBusiness.php";
-$errorMessage='';
+ 
 
-$promoBLL= new PromoBLL();
+include 'business/PromoBusiness.php';
+$errorMessage = '';
 
-if(!empty($_POST)){
+ $promoBLL = new PromoBLL();
+if( !empty($_POST) ) {
+
     $newPromo = new Promo();
-    $newPromo->setName($_POST['name']);
+    $newPromo ->setName($_POST['name']) ;
+    
 
-    $addPromoResultat = $promoBLL->AddPromo($newPromo);
-    header("location :index.php");
+   
+    $addPromoResult = $promoBLL->AddPromo($newPromo);
+    header("Location: index.php");
 
+    
 }
+
+
+
+
 ?>
-
-
-
 <div class="page-header">
-    <h1>Add New Promotion </h1>
+    <h1>Add New Promotion</h1>
 </div>
 
 
 
 
     <form action="" method="post" name="studentInfoForm" id="studentInfoForm" class="form-horizontal">
+        
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Name</label>
+            <label for="lastName" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-4">
-                <input type="text" value="" name="name" id="" class="form-control" placeholder=" Name" />
+                <input type="text" value="" name="name" id="lastName" class="form-control" placeholder=" name" />
             </div>
         </div>
-        
         
        
         <div class="form-group">
@@ -40,16 +46,6 @@ if(!empty($_POST)){
         </div>
 
     </form>
-
-
-
-
-
-
-
-
-
-
 
 
 

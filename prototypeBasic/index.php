@@ -1,8 +1,10 @@
 <?php
- include ("business/promoBusiness.php");
- $promoBLL = new PromoBLL();
- $data =$promoBLL->GetAllPromos();
+    include ("business/PromoBusiness.php");
+    $promoBLL= new PromoBLL();
+    $data = $promoBLL->GetAllPromos();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,24 +12,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Promotion manager</title>
+    <title>promotion manager</title>
 </head>
 <body>
     <div>
-        <a href="add.php">add promotion  </a>
+        <a href="add.php">add Promotion </a>
         <table>
             <tr>
+                <th>id</th>
+                <th>name</th>
                
-                <th>Name</th>
-                
-                <th>Action </th>
+                <th>action </th>
             </tr>
             <?php
                     foreach($data as $value){
             ?>
 
             <tr>
-              
+                <td><?= $value->getId() ?></td>
                 <td><?= $value->getName() ?></td>
                
                 <td>
