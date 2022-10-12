@@ -21,8 +21,18 @@
 <body>
 
     <div>
-        <input type="text" id="live_search" placeholder="Search">
-        <div id="searchResult"></div>
+    <div class="container-fluid">       
+    <div class="content-wrapper">
+        <div class="container">
+            
+            <div class="row">
+            <div class="col-xs-12">
+                <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
+                <div id="result"></div>
+            </div>
+            </div>	
+        </div>
+    </div>
         <a href="add.php">add Promotion </a>
         <table>
             <tr>
@@ -53,72 +63,40 @@
 
 </body>
 </html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        //when user type any value then that value will be stored in a var
-        $("#live_search").keyup(function () {
-            var input = $(this).val();
-            //if this input not empty then using ajax method 
-            if(input!=""){
-                $.ajax({
-                    url:"business/liveSearch.php",
-                    method:"POST",
-                    data:{input:input},
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		load_data();
+		function load_data(query)
+		{
+			$.ajax({
+			url:"business/searchlive.php",
+			method:"POST",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+			});
+		}
+		$('#search').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();
+		}
+		});
+	});
+	</script>
+</head>
+<body>
 
-
-                    success:function(data){
-                        $('#searchResult').html(data);
-                    }
-                });
-            }else{
-                $('#searchResult').css("display","none");
-            }
-        });
-        
-    })
-</script>
-
-
-
-
-
-
-<!-- <script>
-    https://www.webslesson.info/2016/03/ajax-live-data-search-using-jquery-php-mysql.html
-$(document).ready(function(){
-
- load_data();
-
- function load_data(query)
- {
-  $.ajax({
-   url:"business/liveSearch.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#searchResult').html(data);
-   }
-  });
- }
- $('#live_search').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
- });
-});
-</script> -->
-
-
-
-
-
+</div>
 
 
 
