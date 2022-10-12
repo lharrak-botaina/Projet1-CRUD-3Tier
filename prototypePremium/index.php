@@ -63,17 +63,18 @@
 
 </body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
 	<script>
 	$(document).ready(function(){
-		load_data();
+		load_data(); //The load() method loads data from a server and puts the returned data into the selected element.
 		function load_data(query)
 		{
 			$.ajax({
 			url:"business/searchlive.php",
 			method:"POST",
 			data:{query:query},
+           
 			success:function(data)
 			{
 				$('#result').html(data);
