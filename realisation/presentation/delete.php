@@ -1,5 +1,5 @@
 <?php
-    include "dataAccess/PromoDA.php";
+    include "../dataAccess/PromoDA.php";
 
 if(isset($_GET['id'])){
 

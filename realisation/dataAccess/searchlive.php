@@ -1,4 +1,6 @@
+
 <?php
+
 include '../dataAccess/config.php';
 $return = '';
 if(isset($_POST["query"]))
@@ -23,7 +25,7 @@ if(mysqli_num_rows($result) > 0)
         <table class="table table bordered">
         <tr>
             
-            <th>Promotion</th>
+            <th>Promotion name</th>
         </tr>';
 	while($row1 = mysqli_fetch_array($result))
 	{
@@ -37,7 +39,7 @@ if(mysqli_num_rows($result) > 0)
 }
 else{
 
-	echo 'No results containing all your search terms were found.';
+	echo 'Not found';
 }
 }
 ?>

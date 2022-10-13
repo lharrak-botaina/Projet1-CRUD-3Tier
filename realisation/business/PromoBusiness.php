@@ -1,7 +1,7 @@
 <?php
 
 
-include("dataAccess/PromoDA.php");
+include("../dataAccess/PromoDA.php");
 class PromoBLL{
     private $promoDA= null;
 
