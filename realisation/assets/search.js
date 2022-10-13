@@ -4,7 +4,7 @@
 		function load_data(query)
 		{
 			$.ajax({
-			url:"dataAccess/searchlive.php",
+			url:"../dataAccess/searchlive.php",
 			method:"POST",
 			data:{query:query},
            
