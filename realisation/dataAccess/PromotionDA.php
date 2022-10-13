@@ -1,11 +1,11 @@
 <?php
- include 'Promo.php';
+ include 'Promotion.php';
  include 'config.php';
-class PromoDA{
+class PromotionDA{
 
 
-    public function addPromo($promo){
-        $Name = $promo->getName();
+    public function addPromotion($promotion){
+        $Name = $promotion->getName();
         $insertRow="INSERT INTO promotion(name) 
                                 VALUES('$Name')";
         mysqli_query(getConnection(), $insertRow);
@@ -13,24 +13,24 @@ class PromoDA{
 
     
 
-    public function getPromos(){
+    public function getPromotions(){
         $SelctRow = 'SELECT * FROM promotion';
         $query = mysqli_query(getConnection() ,$SelctRow);
-        $promos_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
+        $promotions_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
         $TableData = array();
-        foreach ($promos_data as $value_Data) {
-            $promo = new Promo();
-            $promo->setId($value_Data['id']);
-            $promo->setName($value_Data['name']);
+        foreach ($promotions_data as $value_Data) {
+            $promotion = new Promotion();
+            $promotion->setId($value_Data['id']);
+            $promotion->setName($value_Data['name']);
            
-            array_push($TableData, $promo);
+            array_push($TableData, $promotion);
         }
           return $TableData;
     }
 
 
-    public function DeletePromo($id) {
+    public function DeletePromotion($id) {
 
         $sql = "DELETE FROM promotion WHERE id = $id";
 
@@ -42,12 +42,12 @@ class PromoDA{
     public function Edit($id){
         $SelectRowId = "SELECT * FROM promotion WHERE id=$id";
         $result = mysqli_query(getConnection(),  $SelectRowId);
-        $promo_data = mysqli_fetch_assoc($result);
-        $promo = new Promo();
-        $promo->setId($promo_data['id']);
-        $promo->setName($promo_data['name']);
+        $promotion_data = mysqli_fetch_assoc($result);
+        $promotion = new Promotion();
+        $promotion->setId($promotion_data['id']);
+        $promotion->setName($promotion_data['name']);
        
-        return $promo;
+        return $promotion;
     }
 
 

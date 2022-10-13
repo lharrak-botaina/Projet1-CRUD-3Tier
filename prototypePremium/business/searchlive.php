@@ -37,7 +37,7 @@ if(mysqli_num_rows($result) > 0)
 }
 else{
 
-	echo 'No results containing all your search terms were found.';
+	echo 'No results ';
 }
 }
 ?>

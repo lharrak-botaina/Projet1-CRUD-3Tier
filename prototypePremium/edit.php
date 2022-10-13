@@ -1,19 +1,19 @@
 <?php
  
 
- include 'business/PromoBusiness.php';
+ include 'business/PromotionBusiness.php';
 
- $promoBLL = new PromoBLL();
+ $promotionBLL = new PromotionBLL();
 
  if(isset($_GET['id'])){
-    $displayValue = $promoBLL->EditPromo($_GET['id']);
+    $displayValue = $promotionBLL->EditPromotion($_GET['id']);
 } 
 
 if( !empty($_POST) ) {
 
     $id =$_POST["id"];
     $Name =$_POST["name"];
-     $promoBLL->UpdatePromo($id,$Name);
+     $promotionBLL->UpdatePromotion($id,$Name);
     header("Location: index.php");
 
 }

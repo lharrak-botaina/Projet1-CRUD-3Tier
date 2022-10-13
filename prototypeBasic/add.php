@@ -1,18 +1,18 @@
 <?php
  
 
-include 'business/PromoBusiness.php';
+include 'business/PromotionBusiness.php';
 $errorMessage = '';
 
- $promoBLL = new PromoBLL();
+ $promotionBLL = new PromotionBLL();
 if( !empty($_POST) ) {
 
-    $newPromo = new Promo();
-    $newPromo ->setName($_POST['name']) ;
+    $newPromotion = new Promotion();
+    $newPromotion ->setName($_POST['name']) ;
     
 
    
-    $addPromoResult = $promoBLL->AddPromo($newPromo);
+    $addPromoResult = $promotionBLL->AddPromotion($newPromotion);
     header("Location: index.php");
 
     

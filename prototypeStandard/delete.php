@@ -1,11 +1,11 @@
 <?php
-    include "dataAccess/PromoDA.php";
+    include "dataAccess/PromotionDA.php";
 
 if(isset($_GET['id'])){
 
-    $promoDA = new PromoDA();
+    $promotionDA = new PromotionDA();
     $id = $_GET['id'] ;
-    $promoDA->DeletePromo($id);
+    $promotionDA->DeletePromotion($id);
         
     header('Location: index.php');
 }

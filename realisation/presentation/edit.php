@@ -1,19 +1,19 @@
 <?php
  
 
- include '../business/PromoBusiness.php';
+ include '../business/PromotionBusiness.php';
 
- $promoBLL = new PromoBLL();
+ $promotionBLL = new PromotionBLL();
 
  if(isset($_GET['id'])){
-    $displayValue = $promoBLL->EditPromo($_GET['id']);
+    $displayValue = $promotionBLL->EditPromotion($_GET['id']);
 } 
 
 if( !empty($_POST) ) {
 
     $id =$_POST["id"];
     $Name =$_POST["name"];
-     $promoBLL->UpdatePromo($id,$Name);
+     $promotionBLL->UpdatePromotion($id,$Name);
     header("Location: index.php");
 
 }
@@ -38,7 +38,7 @@ if( !empty($_POST) ) {
  
     <form  action="" class="login-form" method="POST">
     <div class="page-header">
-    <h3>Update promo</h3>
+    <h3>Editer la promotion </h3>
 </div>
     <input type="hidden" value=<?php echo $displayValue->getId()?>  name="id" > 
       <input type="text" value=<?php echo $displayValue->getName()?>  name="name" placeholder="Name" />

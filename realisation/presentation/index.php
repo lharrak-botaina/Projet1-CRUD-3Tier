@@ -1,8 +1,8 @@
 
   <?php
-    include ("../business/PromoBusiness.php");
-    $promoBLL= new PromoBLL();
-    $data = $promoBLL->GetAllPromos();
+    include ("../business/PromotionBusiness.php");
+    $promotionBLL= new PromotionBLL();
+    $data = $promotionBLL->GetAllPromotions();
   ?> 
 
 
@@ -25,7 +25,7 @@
         <div class="card rounded-3">
           <div class="card-body p-4">
 
-            <h4  class="text-center my-3 pb-3">Promotion Management </h4>
+            <h4  class="text-center my-3 pb-3">Gestion de la promotion </h4>
 
             <form  class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
               <div class="col-6">
@@ -37,7 +37,7 @@
               </div>
 
               <div class="col-4">
-                <button type="submit"   class="btn btn-primary "><a id="addNew" href="add.php">Add new promotion </a> </button>
+                <button type="submit"   class="btn btn-primary "><a id="addNew" href="add.php">Ajouter une promotion</a> </button>
               </div>
 
               <!-- <div class="col-12">
@@ -49,7 +49,7 @@
               <thead>
                 <tr>
                   <th scope="col">No.</th>
-                  <th scope="col">Promotion name</th>
+                  <th scope="col">Nom de la promotion</th>
                  
                   <th scope="col">Actions</th>
                 </tr>
@@ -65,8 +65,8 @@
                   <td style="width:216px">
                   
                   
-                    <button   class="btn btn-danger"> <a href="delete.php?id=<?php echo $value->getId() ?>">Delete</a></button>
-                    <button   class="btn btn-success ms-1"><a href="edit.php?id=<?php echo $value->getId() ?>">Edit</a> </button>
+                    <button   class="btn btn-danger"> <a href="delete.php?id=<?php echo $value->getId() ?>">Supprimer</a></button>
+                    <button   class="btn btn-success ms-1"><a href="edit.php?id=<?php echo $value->getId() ?>">Modifier</a> </button>
                   </td>
                 </tr>
                 
