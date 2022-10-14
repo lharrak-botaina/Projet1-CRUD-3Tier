@@ -15,9 +15,10 @@ class PromotionDA{
 
     public function getPromotions(){
         $SelctRow = 'SELECT * FROM promotion';
+        // - It is using mysqli_query() and mysqli_fetch_all() To apply the query. execution of the query 
         $query = mysqli_query(getConnection() ,$SelctRow);
         $promotions_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
-
+        print_r($promotions_data);
         $TableData = array();
         foreach ($promotions_data as $value_Data) {
             $promotion = new Promotion();
@@ -26,6 +27,7 @@ class PromotionDA{
            
             array_push($TableData, $promotion);
         }
+        
           return $TableData;
     }
 
