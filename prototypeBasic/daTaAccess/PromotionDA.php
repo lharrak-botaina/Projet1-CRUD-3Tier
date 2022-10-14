@@ -1,7 +1,8 @@
 <?php
  include 'Promotion.php';
- include 'config.php';
-class PromotionDA{
+//  include 'config.php';
+include 'MyConnection.php';
+class PromotionDA extends MyConnection{
 
 
     
@@ -9,14 +10,14 @@ class PromotionDA{
         $Name = $promotion->getName();
         $insertRow="INSERT INTO promotion(name) 
                                 VALUES('$Name')";
-        mysqli_query(getConnection(), $insertRow);
+        mysqli_query($this->getConnection(), $insertRow);
     }
 
     
 
     public function getPromotions(){
         $SelctRow = 'SELECT * FROM promotion';
-        $query = mysqli_query(getConnection() ,$SelctRow);
+        $query = mysqli_query($this->getConnection(),$SelctRow);
         $promotions_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
         $TableData = array();
